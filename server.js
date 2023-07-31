@@ -1,4 +1,5 @@
 const express = require('express');
+const fs = require('fs');
 const path = require('path');
 const { clog } = require('./middleware/clog');
 const api = require('./routes/index.js');
@@ -26,6 +27,14 @@ app.get('/', (req, res) =>
 app.get('/feedback', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/pages/feedback.html'))
 );
+
+app.get('*', (req, res) =>
+  res.sendFile(path.join(__dirname, '/public/images/notfound.jpg'))
+)
+
+app.post('/api/diagnostics', (req, res) =>
+  res.sendFile(path.join(__dirname, '/routes/diagnostics.js'))
+)
 
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)

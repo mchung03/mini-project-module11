@@ -28,6 +28,18 @@ main {
   display: block;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.error h4 {
+  display: flex;
+  justify-content: center;
+}
+
 /**
      * Correct the font size and margin on `h1` elements within `section` and
      * `article` contexts in Chrome, Firefox, and Safari.
